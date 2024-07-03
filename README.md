@@ -52,13 +52,13 @@ ros2 launch tello_driver tello_launch.py
 
 ```
 
-### Issues and Contributions
+## Issues and Contributions
 
 If you encounter any issues, please open an issue on GitHub. Contributions are welcome!
 
 This code is tested on Ubuntu 22 and ROS2 Humble.
 
-### License
+## License
 
 This project is licensed under the MIT License.
 
