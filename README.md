@@ -19,7 +19,7 @@ This project involves controlling DJI Tello drones using ROS2. The nodes include
 ### 2. Wi-Fi Setting
 
 1. Restart the drone and use the `wifi_setup.py` code to set the SSID and Password of your modem (or Wi-Fi hotspot). You should change the `your_SSID` and `your_password` in the code.
-2. Get the drone IP using `ip neighbor`.
+2. Get the drone IP using `ip neighbor` in Linux terminal.
 
 ### wifi_setup.py
 ```python
@@ -52,3 +52,5 @@ response, _ = sock.recvfrom(1024)  # Waiting for response from drone
 print(f'Received: {response.decode()}')
 
 sock.close()  # Close the socket when done
+```
+This code is tested on Ubuntu 22 with ROS2 Humble installed on it.
