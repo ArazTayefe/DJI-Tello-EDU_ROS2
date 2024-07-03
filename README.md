@@ -10,7 +10,7 @@ This project involves controlling DJI Tello drones using ROS2. The nodes include
 
 In this project, you can run the communication node on one computer (e.g., a Raspberry Pi) and the control node on a remote server. This distributed architecture allows for efficient drone management and control, leveraging the computational capabilities of different machines. 
 
-![System Architecture](High level structure.png)
+![System Architecture](High_level_structure.png)
 
 - **Communication Node**: This node is responsible for direct communication with the DJI Tello drones. It handles sending commands and receiving telemetry data. Running this node on a Raspberry Pi allows you to place the communication node closer to the drones, potentially improving communication reliability and reducing latency.
 
