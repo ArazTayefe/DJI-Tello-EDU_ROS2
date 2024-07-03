@@ -4,7 +4,7 @@ This repository contains ROS2 nodes developed to control DJI Tello drones.
 
 ## Project Overview
 
-This project involves controlling DJI Tello drones using ROS2. The nodes include functionalities for communication, camera streaming, and control.
+This project involves controlling DJI Tello drones using ROS2. The nodes include functionalities for communication and control.
 
 ## Setup Drone
 
