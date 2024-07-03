@@ -12,7 +12,7 @@ sock.bind(('', 9000))  # Ensure this port is available and not blocked by your f
 
 # Command to switch the Tello to station mode: command to connect to your Wi-Fi
 command = 'command'
-wifi_command = f'ap TelloHotspot mTR1315811314.'
+wifi_command = f'ap your_SSID your_password.'
 # Send commands
 sock.sendto(command.encode(), tello_address)
 time.sleep(1)  # Wait for the drone to be ready to receive next command
