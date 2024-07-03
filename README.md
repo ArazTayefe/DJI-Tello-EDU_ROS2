@@ -21,42 +21,27 @@ This project involves controlling DJI Tello drones using ROS2. The nodes include
 1. Restart the drone and use the `wifi_setup.py` code to set the SSID and Password of your modem (or Wi-Fi hotspot). You should change the `your_SSID` and `your_password` in the code.
 2. Get the drone IP using `ip neighbor` in Linux terminal.
 
-### wifi_setup.py
-```python
-import socket
-import time
-
-# IP and port of the Tello drone's command interface
-tello_address = ('192.168.10.1', 8889)
-
-# Create a UDP connection
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-# Bind to an address and port to receive messages from the drone
-sock.bind(('', 9000))  # Ensure this port is available and not blocked by your firewall
-
-# Command to switch the Tello to station mode: command to connect to your Wi-Fi
-command = 'command'
-wifi_command = f'ap your_SSID your_password.'
-# Send commands
-sock.sendto(command.encode(), tello_address)
-time.sleep(1)  # Wait for the drone to be ready to receive next command
-
-response, _ = sock.recvfrom(1024)  # Waiting for response from drone
-print(f'Received: {response.decode()}')
-
-sock.sendto(wifi_command.encode(), tello_address)
-time.sleep(1)  # Give the drone some time to process the command
-
-response, _ = sock.recvfrom(1024)  # Waiting for response from drone
-print(f'Received: {response.decode()}')
-
-sock.close()  # Close the socket when done
-```
-
-### 3. Clone the repository:
+### 3. Run the ROS2 Node
+3.1 Clone the repository:
 ```
 git clone git@github.com:NickTayefe/DJI-Tello-EDU.git
 cd DJI-Tello-EDU
 ```
+3.2 Change your directory to your ROS2 workspace and launch the driver:
+```
+cd ~/'your_ros2_workspace'
+colcon build --packages-select tello_driver
+source install/setup.bash
+ros2 launch tello_driver tello_launch.py
+
+```
+
+### Issues and Contributions
+
+If you encounter any issues, please open an issue on GitHub. Contributions are welcome!
 This code is tested on Ubuntu 22 with ROS2 Humble installed on it.
+
+### License
+
+This project is licensed under the MIT License.
+
