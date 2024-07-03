@@ -21,7 +21,21 @@ This project involves controlling DJI Tello drones using ROS2. The nodes include
 1. Restart the drone and use the `wifi_setup.py` code to set the SSID and Password of your modem (or Wi-Fi hotspot). You should change the `your_SSID` and `your_password` in the code.
 2. Get the drone IP using `ip neighbor` in Linux terminal.
 
-### 3. Run the ROS2 Node
+### 3. Installing and Using mocap4r2
+
+mocap4r2 is a ROS2 package designed to integrate motion capture systems with ROS2. It provides tools and nodes to interface with OptiTrack systems, allowing for real-time tracking and data integration in ROS2 applications. This project uses mocap4r2 to integrate OptiTrack Flex 13 cameras.
+
+For more information, visit the [mocap4r2 GitHub repository](https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack).
+
+1. Ensure your motion capture cameras are set up and calibrated correctly.
+2. Make sure that configuration file is correct. The server_address is the IP of the PC that runs the motion capture software and local_addresses is the IP addresses of the PC that runs the mocap4r2.
+3. Launch the mocap4r2 nodes to start streaming motion capture data to ROS2:
+```
+ros2 launch mocap4r2_optitrack_driver optitrack2.launch.py
+ros2 lifecycle set /mocap4r2_optitrack_driver_node activate
+```
+
+### 4. Run the ROS2 Node
 3.1 Clone the repository:
 ```
 git clone git@github.com:NickTayefe/DJI-Tello-EDU.git
