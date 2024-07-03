@@ -55,7 +55,8 @@ sock.close()  # Close the socket when done
 ```
 
 ### 3. Clone the repository:
-```git clone git@github.com:NickTayefe/DJI-Tello-EDU.git
+```
+git clone git@github.com:NickTayefe/DJI-Tello-EDU.git
 cd DJI-Tello-EDU
 ```
 This code is tested on Ubuntu 22 with ROS2 Humble installed on it.
