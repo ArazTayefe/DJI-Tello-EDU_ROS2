@@ -30,6 +30,9 @@ mocap4r2 is a ROS2 package designed to integrate motion capture systems with ROS
 3. Launch the mocap4r2 nodes to start streaming motion capture data to ROS2:
 ```
 ros2 launch mocap4r2_optitrack_driver optitrack2.launch.py
+```
+4. As the driver node is a lifecycle node, you should transition to activate:
+```
 ros2 lifecycle set /mocap4r2_optitrack_driver_node activate
 ```
 For more information, visit the [mocap4r2](https://github.com/MOCAP4ROS2-Project/mocap4ros2_optitrack) GitHub repository.
