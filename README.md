@@ -26,7 +26,7 @@ This project involves controlling DJI Tello drones using ROS2. The nodes include
 mocap4r2 is a ROS2 package designed to integrate motion capture systems with ROS2. It provides tools and nodes to interface with OptiTrack systems, allowing for real-time tracking and data integration in ROS2 applications. This project uses mocap4r2 to integrate OptiTrack Flex 13 cameras.
 
 1. Ensure your motion capture cameras are set up and calibrated correctly.
-2. Make sure that configuration file is correct. The server_address is the IP of the PC that runs the motion capture software and local_addresses is the IP addresses of the PC that runs the mocap4r2.
+2. Make sure that configuration file is correct. The server_address is the IP of the PC that runs the motion capture software, and local_address is the IP addresses of the PC that runs the mocap4r2.
 3. Launch the mocap4r2 nodes to start streaming motion capture data to ROS2:
 ```
 ros2 launch mocap4r2_optitrack_driver optitrack2.launch.py
